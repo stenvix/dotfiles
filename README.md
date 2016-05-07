@@ -1,2 +1,2 @@
-# ScriptsCollection
-This is my Linux ScriptsCollection
+#Linux dotfiles
+My collection of dotfiles
