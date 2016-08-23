@@ -2,13 +2,13 @@
 
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
-
 "---------------=== Plugins ===-------------------
 
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'                   " Package manager
 Plugin 'vim-airline/vim-airline'                " Airline toolbar
 Plugin 'vim-airline/vim-airline-themes'         " Theme for airline toolbar
 Plugin 'airblade/vim-gitgutter'                 " Show file changes
@@ -27,7 +27,7 @@ Plugin 'tpope/vim-commentary'                   " Comment stuff out
 Plugin 'hdima/python-syntax'		            " Python 3.5 Support
 "---------------=== Python === -----------------------"
 Plugin 'davidhalter/jedi-vim'                   " Awesome Python autocompletion with VIM
-Plugin 'klen/python-mode'                       " Vim python-mode. PyLint, Rope, Pydoc, breakpoints from box
+"Plugin 'klen/python-mode'                       " Vim python-mode. PyLint, Rope, Pydoc, breakpoints from box
 Plugin 'mitsuhiko/vim-jinja'                    " Jinja support for vim
 Plugin 'mitsuhiko/vim-python-combined'          " Combined Python 2/3 for Vim
 Plugin 'hynek/vim-python-pep8-indent'           " PEP8 indent
@@ -164,32 +164,44 @@ autocmd vimenter * NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeIgnore=['\.pyc$']
 " Python Mode
-let g:pymode_rope = 0
+" let g:pymode_rope = 0
 
 " Documentation
-let g:pymode_doc = 0
-let g:pymode_doc_key = 'K'
+" let g:pymode_doc = 0
+" let g:pymode_doc_key = 'K'
 
 "Linting
-let g:pymode_lint = 1
-let g:pymode_lint_checkers = ['pylint', 'pep8']
-let g:pymode_lint_cwindow = 1
-let g:pymode_lint_ignore="E501,W601,C0110,C0111"
-let g:pymode_lint_write = 0
+" let g:pymode_lint = 1
+" let g:pymode_lint_checkers = ['pylint', 'pep8']
+" let g:pymode_lint_cwindow = 1
+" let g:pymode_lint_ignore="E501,W601,C0110,C0111"
+" let g:pymode_lint_write = 0
 
 " Support virtualenv
-let g:pymode_virtualenv = 1
+" let g:pymode_virtualenv = 1
 
 " Enable breakpoints plugin
-let g:pymode_breakpoint = 1
-let g:pymode_breakpoint_key = '<leader>b'
+" let g:pymode_breakpoint = 1
+" let g:pymode_breakpoint_key = '<leader>b'
 
 " Syntax highlighting
-let g:pymode_syntax = 1
-let g:pymode_syntax_all = 1
-let g:pymode_syntax_indent_errors = g:pymode_syntax_all
-let g:pymode_syntax_space_errors = g:pymode_syntax_all
+" let g:pymode_syntax = 1
+" let g:pymode_syntax_all = 1
+" let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+" let g:pymode_syntax_space_errors = g:pymode_syntax_all
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
+let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 2
+"let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_signs = 0
+let g:syntastic_echo_current_error=0
+let g:syntastic_python_checkers=['pylint']
+" Python syntax
+let python_highlight_all = 1
 "Vim jedy
 autocmd FileType python setlocal completeopt-=preview
 let g:jedi#popup_select_first = 1
