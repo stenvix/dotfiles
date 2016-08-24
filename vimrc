@@ -50,12 +50,19 @@ let python_highlight_all = 1
 " Vim 256 colors
 set t_Co=256
 
+" Color columnt
+set colorcolumn=100
+set textwidth=100
+highlight ColorColumn ctermbg=236
+
 " Better copy & paste
 set pastetoggle=<F2>
-" set clipboard=unnamed
-
+set clipboard=unnamedplus
 " Remap <leader>
 let mapleader=","
+
+"Increase undo's level
+set undolevels=1000
 
 " Backspase setting
 " Set normal deletion"
@@ -73,6 +80,8 @@ set smartcase
 " Show line numbers
 set number
 
+" Relative numbering
+set rnu
 " Set tabs to have 4 spaces
 set ts=4
 
@@ -138,9 +147,9 @@ noremap <Leader>E :qa!<CR>   " Quit all windows
 nmap <leader>q :bp <BAR> bd #<CR>  "Quit buffer
 
 " Quick save
-noremap <silent> <C-s> :update<CR>
-vnoremap <silent> <C-s> <C-C>:update<CR>
-inoremap <silent> <C-s> <C-O>:update<CR>
+noremap <silent> <C-z> :update<CR>
+vnoremap <silent> <C-z> <C-C>:update<CR>
+inoremap <silent> <C-z> <C-O>:update<CR>
 "---------------=== Plugin specific settings ===-------------------
 
 "Detecting filetype
@@ -194,12 +203,11 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 2
-"let g:syntastic_check_on_open = 1
+let g:syntastic_aggregate_errors = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs = 0
-let g:syntastic_echo_current_error=0
-let g:syntastic_python_checkers=['pylint']
+let g:syntastic_echo_current_error=1
+let g:syntastic_python_checkers=['pylint','flake8']
 " Python syntax
 let python_highlight_all = 1
 "Vim jedy
