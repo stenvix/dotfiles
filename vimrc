@@ -42,7 +42,9 @@ call vundle#end()
 "---------------=== Common Vim settings ===-------------------
 
 " Enable color scheme
-colorscheme monoacc
+if filereadable( expand("$HOME/.vim/bundle/vim-colorschemes/colors/monoacc.vim"))
+    colorscheme monoacc
+endif
 "set background=dark
 
 " Enable syntax highlighting
