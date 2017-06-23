@@ -3,13 +3,15 @@
 #FILES
 
 VIMRC_DEST=$HOME/".vimrc"
-
+VUNDLE_FOLDER=$HOME/".vim/bundle/Vundle.vim"
 #Clone vundle repo
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+if [[ ! -d $VUNDLE_FOLDER ]]; then
+    git clone https://github.com/VundleVim/Vundle.vim.git $VUNDLE_FOLDER 
+fi
 
 #Link vimrc
-if [[ -L $VIMRC ]]; then
-    ln -s vimrc $VIMRC_DEST
+if [[ ! -f $VIMRC_DEST ]]; then
+    ln -s `realpath vimrc` $VIMRC_DEST
 fi
 
 #Install vim plugins

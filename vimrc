@@ -35,13 +35,15 @@ Plugin 'jmcantrell/vim-virtualenv'              " Virtualenv suppirt
 Plugin 'majutsushi/tagbar'                      " Tagbar
 "---------------=== Color scheme ===-------------------"
 Plugin 'altercation/vim-colors-solarized'       " Solarized color scheme
+Plugin 'flazz/vim-colorschemes'                 " Themes pack
+Plugin 'whatyouhide/vim-gotham'
 call vundle#end()
 
 "---------------=== Common Vim settings ===-------------------
 
 " Enable color scheme
-colorscheme solarized
-set background=dark
+colorscheme monoacc
+"set background=dark
 
 " Enable syntax highlighting
 syntax enable
