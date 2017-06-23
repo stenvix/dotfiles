@@ -35,6 +35,7 @@ fi
 
 # Set gnome-terminal profile
 
+gconftool-2 --set --type string /apps/gnome-terminal/global/default_profile Smyck
 gconftool-2 --set /apps/gnome-terminal/profiles/Smyck/use_system_font --type=boolean false
 gconftool-2 --set /apps/gnome-terminal/profiles/Smyck/font --type string "Inconsolata for Powerline
 Medium 12"

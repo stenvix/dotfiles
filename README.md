@@ -1,2 +1,2 @@
-#Linux dotfiles
+# Linux dotfiles
 My collection of dotfiles
