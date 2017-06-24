@@ -39,4 +39,4 @@ fi
 
 gconftool-2 --set --type string /apps/gnome-terminal/global/default_profile $profile
 gconftool-2 --set /apps/gnome-terminal/profiles/$profile/use_system_font --type=boolean false
-gconftool-2 --set /apps/gnome-terminal/profiles/$profile/font --type string "Inconsolata for Powerline Medium 12"
+gconftool-2 --set /apps/gnome-terminal/profiles/$profile/font --type string "DejaVu Sans Mono for Powerline Book 11"
