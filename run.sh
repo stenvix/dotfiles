@@ -22,6 +22,8 @@ fi
 vim +PluginInstall +qall
 
 # Install gnome-terminal profile
+profile='Smyck'
+export {PROFILE_NAME,PROFILE_SLUG}=$profile
 wget -O xt  http://git.io/v3DB9 && chmod +x xt && ./xt && rm xt
 
 # Install powerline fonts
@@ -35,7 +37,6 @@ fi
 
 # Set gnome-terminal profile
 
-gconftool-2 --set --type string /apps/gnome-terminal/global/default_profile Smyck
-gconftool-2 --set /apps/gnome-terminal/profiles/Smyck/use_system_font --type=boolean false
-gconftool-2 --set /apps/gnome-terminal/profiles/Smyck/font --type string "Inconsolata for Powerline
-Medium 12"
+gconftool-2 --set --type string /apps/gnome-terminal/global/default_profile $profile
+gconftool-2 --set /apps/gnome-terminal/profiles/$profile/use_system_font --type=boolean false
+gconftool-2 --set /apps/gnome-terminal/profiles/$profile/font --type string "DejaVu Sans Mono for Powerline Book 11"

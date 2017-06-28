@@ -1,2 +1,5 @@
 # Linux dotfiles
-My collection of dotfiles
+Parts:
+ - VIM
+ - Powerline fonts
+ - Gnome Terminal theme
