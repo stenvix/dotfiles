@@ -22,9 +22,11 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'            " A plugin of NERDTree showing g
 "------------------=== Other ===----------------------"
 Plugin 'tpope/vim-surround'                     " Parentheses, brackets, quotes, XML tags, and more
 "---------------=== Languages support ===-------------"
+Plugin 'valloric/youcompleteme'                 " Autocomplete engine
 Plugin 'scrooloose/syntastic'                   " Syntax checking plugin for Vim
 Plugin 'tpope/vim-commentary'                   " Comment stuff out
 Plugin 'hdima/python-syntax'		            " Python 3.5 Support
+Plugin 'pangloss/vim-javascript'                " JavaScript support
 "---------------=== Python === -----------------------"
 Plugin 'davidhalter/jedi-vim'                   " Awesome Python autocompletion with VIM
 "Plugin 'klen/python-mode'                       " Vim python-mode. PyLint, Rope, Pydoc, breakpoints from box
@@ -34,9 +36,7 @@ Plugin 'hynek/vim-python-pep8-indent'           " PEP8 indent
 Plugin 'jmcantrell/vim-virtualenv'              " Virtualenv suppirt
 Plugin 'majutsushi/tagbar'                      " Tagbar
 "---------------=== Color scheme ===-------------------"
-Plugin 'altercation/vim-colors-solarized'       " Solarized color scheme
 Plugin 'flazz/vim-colorschemes'                 " Themes pack
-Plugin 'whatyouhide/vim-gotham'
 call vundle#end()
 
 "---------------=== Common Vim settings ===-------------------
@@ -45,6 +45,7 @@ call vundle#end()
 if filereadable( expand("$HOME/.vim/bundle/vim-colorschemes/colors/monoacc.vim"))
     colorscheme monoacc
 endif
+let g:airline_theme='ravenpower'
 "set background=dark
 
 " Enable syntax highlighting
@@ -113,7 +114,16 @@ set foldlevel=1
 
 "---------------=== Key binding ===-------------------
 
-" Navigate between split windows quickly
+" Remap leader key
+let mapleader=','
+
+" Unmap arrow keys
+map <up>    <nop>
+map <down>  <nop>
+map <left>  <nop>
+map <right> <nop>
+
+" Navigate Retween split windows quickly
 nnoremap <c-j> <c-w><c-j>
 nnoremap <c-k> <c-w><c-k>
 nnoremap <c-l> <c-w><c-l>
